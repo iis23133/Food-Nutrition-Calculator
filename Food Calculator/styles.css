@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+    max-width: 100%; /* Ensures container doesn't exceed screen width */
+    width: 100%;
+}
+
+.search-bar {
+    flex-shrink: 0;
+    margin-bottom: 10px;
+    margin-right: 20px;
+
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.food-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fafafa;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+}
+
+.counter,
+.nutrition-target {
+    flex-shrink: 0;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.counter {
+    margin-bottom: 10px;
+}
+
+.nutrition-target {
+    margin-bottom: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f9f9f9;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Responsive Design */
+
+/* Larger Screens (Desktops) */
+@media (min-width: 768px) {
+    .container {
+        width: 70%; /* Adjust container width for larger screens */
+    }
+}
+
+/* Smaller Screens (Tablets and Mobile) */
+@media (max-width: 767px) {
+    .container {
+        padding: 10px;
+    }
+
+    .food-item {
+        flex-direction: column; /* Stack food item content vertically on smaller screens */
+        align-items: flex-start;
+    }
+
+    .food-item > div {
+        margin-bottom: 10px;
+    }
+
+    .counter,
+    .nutrition-target {
+        font-size: 0.9em; /* Slightly smaller font size on mobile */
+    }
+
+    th, td {
+        padding: 8px; /* Reduce padding for table cells */
+    }
+}
+
+/* Extra Small Screens (Mobile) */
+@media (max-width: 480px) {
+    .container {
+        width: 100%; /* Full width on extra small screens */
+    }
+
+    .food-item {
+        padding: 8px;
+    }
+
+    .food-item > div {
+        margin-bottom: 8px;
+    }
+
+    #search-input {
+        padding: 8px;
+    }
+
+    .counter,
+    .nutrition-target {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+}
